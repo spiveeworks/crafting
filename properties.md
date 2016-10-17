@@ -12,3 +12,6 @@ if nothing =X=> Q
 
 ##Consumable
 if Q =X=> nothing
+
+##Interchangeable
+if Generatable and Consumable
