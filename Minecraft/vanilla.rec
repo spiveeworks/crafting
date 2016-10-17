@@ -1,0 +1,16 @@
+Player <=> Player Inventory
+Player =workbench tile=> Player Workbench
+Player Workbench => Player
+2x2 ::= Player Inventory
+2x2 ::= Player Workbench
+3x3 ::= Player Workbench
+
+wood tile[mat] (3 sec)=Player=> wood[mat]
+wood[mat] =2x2=> 4*plank[mat]
+2*plank =2x2=> 4*stick
+4*plank =2x2=> workbench
+2*stick + 3*plank =3x3=> wooden pick[0]
+
+<use pick> ::= wooden pick[n] - wooden pick[n+1] with mult = 0.5
+<mine> ::= cobblestone - stone tile
+<use pick> (use pick.mult * mine.time)=Player=> <mine>
